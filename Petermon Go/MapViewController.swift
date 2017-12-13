@@ -86,9 +86,43 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     mapView.setRegion(region, animated: false)
                     
                     if MKMapRectContainsPoint(mapView.visibleMapRect, MKMapPointForCoordinate(center)) {
-                        print("Yes you can catch it!")
+                        
+                        if let petermonAnnotation = view.annotation as? PetermonAnnotation {
+                            petermonAnnotation.petermon.caught = true
+                            if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                                try? context.save()
+                                if let name = petermonAnnotation.petermon.name {
+                                    let alertVC = UIAlertController(title: "Congrats!", message: "You caught a \(name)", preferredStyle: .alert)
+                                    
+                                    let peterdexAction = UIAlertAction(title: "PeterDex", style: .default, handler: { (action) in
+                                        self.performSegue(withIdentifier: "moveToPeterdex", sender: nil)
+                                    })
+                                    
+                                    let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (alert) in
+                                        alertVC.dismiss(animated: true, completion: nil)
+                                    })
+                                    
+                                    alertVC.addAction(peterdexAction)
+                                    alertVC.addAction(okAction)
+                                    present(alertVC, animated: true, completion: nil)
+                                }
+                                
+                            }
+                        }
                     } else {
-                        print("No you can not catch it!")
+                        if let petermonAnnotation = view.annotation as? PetermonAnnotation {
+                            if let name = petermonAnnotation.petermon.name {
+                                let alertVC = UIAlertController(title: "Oops!", message: "You are too far away from the \(name) to catch it.", preferredStyle: .alert)
+                                
+                                let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (alert) in
+                                    alertVC.dismiss(animated: true, completion: nil)
+                                })
+                                
+                                alertVC.addAction(okAction)
+                                present(alertVC, animated: true, completion: nil)
+                            }
+                        }
+                        
                     }
                 }
             }
