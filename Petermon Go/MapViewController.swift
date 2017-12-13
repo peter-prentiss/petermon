@@ -27,12 +27,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         manager.delegate = self
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            mapView.showsUserLocation = true
-            manager.startUpdatingLocation()
-            mapView.delegate = self
+            setUp()
         } else {
             manager.requestWhenInUseAuthorization()
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            setUp()
+        }
+    }
+    
+    func setUp() {
+        mapView.showsUserLocation = true
+        manager.startUpdatingLocation()
+        mapView.delegate = self
         
         Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
             if let center = self.manager.location?.coordinate {
