@@ -13,7 +13,7 @@ func addAllPetermon() {
     createPetermon(name: "Peterchu", imageName: "pikachu-2")
     createPetermon(name: "Meowth", imageName: "meowth")
     createPetermon(name: "Pidgey", imageName: "pidgey")
-    createPetermon(name: "Bulbasaur", imageName: "bulbasaur")
+    createPetermon(name: "Bulbasaur", imageName: "bullbasaur")
     createPetermon(name: "Charmander", imageName: "charmander")
     createPetermon(name: "Squirtle", imageName: "squirtle")
     createPetermon(name: "Eevee", imageName: "eevee")

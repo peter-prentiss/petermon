@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -29,6 +29,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             mapView.showsUserLocation = true
             manager.startUpdatingLocation()
+            mapView.delegate = self
         } else {
             manager.requestWhenInUseAuthorization()
         }
@@ -43,6 +44,26 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 self.mapView.addAnnotation(anno)
             }
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        
+        if annotation is MKUserLocation {
+            annoView.image = UIImage(named: "mew")
+            var frame = annoView.frame
+            frame.size.height = 50
+            frame.size.width = 50
+            annoView.frame = frame
+        } else {
+            annoView.image = UIImage(named: "player")
+            var frame = annoView.frame
+            frame.size.height = 50
+            frame.size.width = 50
+            annoView.frame = frame
+        }
+        
+        return annoView
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
