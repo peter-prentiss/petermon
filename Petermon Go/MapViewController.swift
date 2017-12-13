@@ -39,5 +39,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
+    
+    @IBAction func centerTapped(_ sender: Any) {
+        if let center = manager.location?.coordinate {
+            let region = MKCoordinateRegionMakeWithDistance(center, 1000, 1000)
+            mapView.setRegion(region, animated: true)
+        } else {
+            manager.stopUpdatingLocation()
+        }
+    }
+    
 }
 

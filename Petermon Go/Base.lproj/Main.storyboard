@@ -21,12 +21,25 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gwy-Z6-cmf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXV-Gy-7V8">
+                                <rect key="frame" x="315" y="10" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="CQh-p9-e4q"/>
+                                    <constraint firstAttribute="height" constant="50" id="kDN-SZ-loB"/>
+                                </constraints>
+                                <state key="normal" image="compass"/>
+                                <connections>
+                                    <action selector="centerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PKS-iB-LpC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Gwy-Z6-cmf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IaP-rL-EbE"/>
                             <constraint firstItem="Gwy-Z6-cmf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NV5-17-8QY"/>
+                            <constraint firstAttribute="trailing" secondItem="tXV-Gy-7V8" secondAttribute="trailing" constant="10" id="Qlt-Fx-xsW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gwy-Z6-cmf" secondAttribute="trailing" id="SVT-8V-DD8"/>
+                            <constraint firstItem="tXV-Gy-7V8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="gJM-ko-SHH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gwy-Z6-cmf" secondAttribute="bottom" id="jwB-16-3S4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -40,4 +53,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="102.99850074962519"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compass" width="512" height="512"/>
+    </resources>
 </document>
