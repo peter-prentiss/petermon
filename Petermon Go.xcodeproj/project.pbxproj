@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		842856BE1FE0F313003B6434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842856BD1FE0F313003B6434 /* AppDelegate.swift */; };
-		842856C01FE0F313003B6434 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842856BF1FE0F313003B6434 /* ViewController.swift */; };
+		842856C01FE0F313003B6434 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842856BF1FE0F313003B6434 /* MapViewController.swift */; };
 		842856C31FE0F313003B6434 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842856C11FE0F313003B6434 /* Main.storyboard */; };
 		842856C61FE0F313003B6434 /* Petermon_Go.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 842856C41FE0F313003B6434 /* Petermon_Go.xcdatamodeld */; };
 		842856C81FE0F313003B6434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842856C71FE0F313003B6434 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		842856BA1FE0F313003B6434 /* Petermon Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Petermon Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		842856BD1FE0F313003B6434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		842856BF1FE0F313003B6434 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		842856BF1FE0F313003B6434 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		842856C21FE0F313003B6434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		842856C51FE0F313003B6434 /* Petermon_Go.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Petermon_Go.xcdatamodel; sourceTree = "<group>"; };
 		842856C71FE0F313003B6434 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				842856BD1FE0F313003B6434 /* AppDelegate.swift */,
-				842856BF1FE0F313003B6434 /* ViewController.swift */,
+				842856BF1FE0F313003B6434 /* MapViewController.swift */,
 				842856C11FE0F313003B6434 /* Main.storyboard */,
 				842856C71FE0F313003B6434 /* Assets.xcassets */,
 				842856C91FE0F313003B6434 /* LaunchScreen.storyboard */,
@@ -140,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842856C61FE0F313003B6434 /* Petermon_Go.xcdatamodeld in Sources */,
-				842856C01FE0F313003B6434 /* ViewController.swift in Sources */,
+				842856C01FE0F313003B6434 /* MapViewController.swift in Sources */,
 				842856BE1FE0F313003B6434 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
