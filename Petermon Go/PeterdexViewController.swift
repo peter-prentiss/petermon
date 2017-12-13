@@ -9,23 +9,59 @@
 import UIKit
 
 class PeterdexViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    var caughtPetermons : [Petermon] = []
+    var uncaughtPetermons : [Petermon] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        caughtPetermons = getCaughtPetermon()
+        uncaughtPetermons = getUncaughtPetermon()
 
         tableView.dataSource = self
         tableView.delegate = self
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "CAUGHT"
+        } else {
+            return "UNCAUGHT"
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        if section == 0 {
+            return caughtPetermons.count
+        } else {
+            return uncaughtPetermons.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        cell.textLabel?.text = "I LOVE PETERMON"
+        var petermon : Petermon
+        
+        if indexPath.section == 0 {
+            petermon = caughtPetermons[indexPath.row]
+        } else {
+            petermon = uncaughtPetermons[indexPath.row]
+        }
+        
+        if let imageName = petermon.imageName {
+            cell.imageView?.image = UIImage(named: imageName)
+        }
+        
+        cell.textLabel?.text = petermon.name
+        
         return cell
     }
 

@@ -16,10 +16,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var manager = CLLocationManager()
     var updateCount = 0
     
+    var petermons : [Petermon] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getAllPetermon()
+        petermons = getAllPetermon()
         
         manager.delegate = self
         
