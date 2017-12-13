@@ -36,11 +36,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
             if let center = self.manager.location?.coordinate {
-                let anno = MKPointAnnotation()
                 var annoCoord = center
                 annoCoord.latitude += (Double(arc4random_uniform(200)) - 100.0) / 50000.0
                 annoCoord.longitude += (Double(arc4random_uniform(200)) - 100.0) / 50000.0
-                anno.coordinate = annoCoord
+                
+                let randomIndex = Int(arc4random_uniform(UInt32(self.petermons.count)))
+                
+                let randomPetermon = self.petermons[randomIndex]
+                
+                let anno = PetermonAnnotation(coord: annoCoord, petermon: randomPetermon)
                 self.mapView.addAnnotation(anno)
             }
         }
@@ -50,17 +54,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         
         if annotation is MKUserLocation {
-            annoView.image = UIImage(named: "mew")
-            var frame = annoView.frame
-            frame.size.height = 50
-            frame.size.width = 50
-            annoView.frame = frame
-        } else {
             annoView.image = UIImage(named: "player")
             var frame = annoView.frame
             frame.size.height = 50
             frame.size.width = 50
             annoView.frame = frame
+        } else {
+            if let petermonAnnotation = annotation as? PetermonAnnotation {
+                if let imageName = petermonAnnotation.petermon.imageName {
+                    annoView.image = UIImage(named: imageName)
+                    var frame = annoView.frame
+                    frame.size.height = 50
+                    frame.size.width = 50
+                    annoView.frame = frame
+                }
+            }
         }
         
         return annoView
