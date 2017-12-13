@@ -13,6 +13,7 @@
 		842856C61FE0F313003B6434 /* Petermon_Go.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 842856C41FE0F313003B6434 /* Petermon_Go.xcdatamodeld */; };
 		842856C81FE0F313003B6434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842856C71FE0F313003B6434 /* Assets.xcassets */; };
 		842856CB1FE0F313003B6434 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842856C91FE0F313003B6434 /* LaunchScreen.storyboard */; };
+		842856D31FE10C1D003B6434 /* PeterdexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842856D21FE10C1D003B6434 /* PeterdexViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		842856C71FE0F313003B6434 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		842856CA1FE0F313003B6434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		842856CC1FE0F313003B6434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842856D21FE10C1D003B6434 /* PeterdexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeterdexViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				842856BD1FE0F313003B6434 /* AppDelegate.swift */,
 				842856BF1FE0F313003B6434 /* MapViewController.swift */,
 				842856C11FE0F313003B6434 /* Main.storyboard */,
+				842856D21FE10C1D003B6434 /* PeterdexViewController.swift */,
 				842856C71FE0F313003B6434 /* Assets.xcassets */,
 				842856C91FE0F313003B6434 /* LaunchScreen.storyboard */,
 				842856CC1FE0F313003B6434 /* Info.plist */,
@@ -142,6 +145,7 @@
 				842856C61FE0F313003B6434 /* Petermon_Go.xcdatamodeld in Sources */,
 				842856C01FE0F313003B6434 /* MapViewController.swift in Sources */,
 				842856BE1FE0F313003B6434 /* AppDelegate.swift in Sources */,
+				842856D31FE10C1D003B6434 /* PeterdexViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
