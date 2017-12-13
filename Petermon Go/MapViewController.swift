@@ -74,6 +74,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         return annoView
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        mapView.deselectAnnotation(view.annotation, animated: true)
+        
+        if view.annotation is MKUserLocation {
+            
+        } else {
+            if let center = manager.location?.coordinate {
+                if let petermonCenter = view.annotation?.coordinate {
+                    let region = MKCoordinateRegionMakeWithDistance(petermonCenter, 200, 200)
+                    mapView.setRegion(region, animated: false)
+                    
+                    if MKMapRectContainsPoint(mapView.visibleMapRect, MKMapPointForCoordinate(center)) {
+                        print("Yes you can catch it!")
+                    } else {
+                        print("No you can not catch it!")
+                    }
+                }
+            }
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if updateCount < 3 {
             if let center = manager.location?.coordinate {
